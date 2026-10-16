@@ -1,0 +1,13 @@
+flux3-mlx: FLUX 3 Image Klein on Apple Silicon (MLX)
+
+This code is a port of the reference inference code in
+https://github.com/black-forest-labs/flux-3-image-klein (Apache-2.0, Copyright 2026 Black Forest Labs, Inc.),
+commit 45e57c9. flux3_mlx/bbox.py is included unchanged from that repository; dit.py, autoencoder.py,
+text_encoder.py, pipeline.py and pup.py are MLX translations of the corresponding reference modules.
+
+This project is not affiliated with or endorsed by Black Forest Labs. "FLUX" is a trademark of Black Forest Labs,
+used here only to describe the model this code runs.
+
+The model weights are NOT covered by this repository's Apache-2.0 license. FLUX 3 Image Klein weights (and the MLX
+conversions of them) are licensed by Black Forest Labs Inc. under the FLUX Kommunity License; the Qwen3-VL-4B text
+encoder and the FLUX 3 prompt upsampler are Apache-2.0. See each model repository for its license.

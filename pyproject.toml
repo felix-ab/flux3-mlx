@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flux3-mlx"
+version = "0.1.0"
+description = "FLUX 3 Image Klein on Apple Silicon: text-to-image, editing with up to 10 references, bounding-box layout (MLX)"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.10"
+dependencies = [
+  "mlx>=0.32",
+  "numpy>=1.26",
+  "pillow>=10",
+  "tokenizers>=0.21",
+  "huggingface_hub>=0.30",
+]
+keywords = ["mlx", "apple-silicon", "flux", "flux-3", "text-to-image", "image-editing", "diffusion"]
+classifiers = [
+  "Operating System :: MacOS",
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Graphics",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+pup = ["mlx-vlm>=0.7.8"]
+
+[project.scripts]
+flux3-mlx = "flux3_mlx.cli:main"
+
+[tool.setuptools]
+packages = ["flux3_mlx"]
