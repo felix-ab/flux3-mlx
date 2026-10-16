@@ -6,7 +6,7 @@ layout, in [MLX](https://github.com/ml-explore/mlx), validated against Black For
 ![Images generated with flux3-mlx (8-bit) on an M4 Pro](https://raw.githubusercontent.com/felix-ab/flux3-mlx/main/docs/showcase.jpg)
 
 ```sh
-pip install "flux3-mlx[pup] @ git+https://github.com/felix-ab/flux3-mlx"
+pip install "flux3-mlx[pup]"
 flux3-mlx "a ceramicist's studio at golden hour, shelves of glazed bowls" --upsample --out studio.png
 ```
 
