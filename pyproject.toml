@@ -25,6 +25,11 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 
+[project.urls]
+Homepage = "https://github.com/felix-ab/flux3-mlx"
+Models = "https://huggingface.co/VisualInference/FLUX-3-Image-Klein-MLX-8bit"
+Issues = "https://github.com/felix-ab/flux3-mlx/issues"
+
 [project.optional-dependencies]
 pup = ["mlx-vlm>=0.7.8"]
 

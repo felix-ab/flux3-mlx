@@ -3,7 +3,7 @@
 **FLUX 3 Image Klein on Apple Silicon.** Text-to-image, editing with up to 10 reference images and bounding-box
 layout, in [MLX](https://github.com/ml-explore/mlx), validated against Black Forest Labs' reference implementation.
 
-![Images generated with flux3-mlx (8-bit) on an M4 Pro](docs/showcase.jpg)
+![Images generated with flux3-mlx (8-bit) on an M4 Pro](https://raw.githubusercontent.com/felix-ab/flux3-mlx/main/docs/showcase.jpg)
 
 ```sh
 pip install "flux3-mlx[pup] @ git+https://github.com/felix-ab/flux3-mlx"

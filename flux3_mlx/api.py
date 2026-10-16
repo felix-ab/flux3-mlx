@@ -43,6 +43,18 @@ def resolve(name: str, table: dict) -> Path:
     return Path(snapshot_download(table.get(name, name)))
 
 
+FORMAT_VERSION = 1
+
+
+def check_format(root: Path) -> None:
+    """Refuse model folders written for a newer runner (root config.json "format_version")."""
+    config = root / "config.json"
+    if config.exists():
+        meta = json.loads(config.read_text())
+        if meta.get("format") == "flux3-mlx" and meta.get("format_version", 1) > FORMAT_VERSION:
+            raise SystemExit(f"{root} needs a newer flux3-mlx: pip install -U flux3-mlx")
+
+
 class Flux3Klein:
     def __init__(self, pipeline: Pipeline, upsampler_path: Path | None = None, low_memory: bool = False):
         self.pipeline, self.upsampler_path, self.low_memory = pipeline, upsampler_path, low_memory
@@ -56,6 +68,7 @@ class Flux3Klein:
         low_memory: never hold the text encoder, DiT and upsampler together (default: on below 24 GB)."""
         low_memory = system_memory_gb() < 24 if low_memory is None else low_memory
         root = resolve(model or default_model(), MODELS)
+        check_format(root)
         pup = resolve(upsampler, UPSAMPLERS) if upsampler else None
         return cls(Pipeline(root, low_memory=low_memory), pup, low_memory)
 
